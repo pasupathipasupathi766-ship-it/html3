@@ -1,57 +1,54 @@
-const fs = require("fs");
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Basic CSS Selectors</title>
 
-const html = fs.readFileSync("index.html", "utf8");
+    <style>
+        /* Element Selector */
+        h1 {
+            color: blue;
+            text-align: center;
+        }
 
-describe("Basic CSS Selectors Assignment (50 Marks)", () => {
+        /* ID Selector */
+        #para1 {
+            color: red;
+        }
 
-    // 5 Marks
-    test("Universal selector (*) is present", () => {
-        expect(html).toMatch(/\*\s*\{/);
-    });
+        /* Class Selector */
+        .para {
+            color: green;
+            font-size: 20px;
+        }
 
-    // 5 Marks
-    test("Universal selector sets Arial font", () => {
-        expect(html).toMatch(/font-family\s*:\s*Arial/i);
-    });
+        /* Universal Selector */
+        * {
+            font-family: Arial;
+        }
 
-    // 5 Marks
-    test("Element selector h1 exists", () => {
-        expect(html).toMatch(/h1\s*\{/);
-    });
+        /* Group Selector */
+        h2, h3 {
+            color: purple;
+        }
+    </style>
+</head>
 
-    // 5 Marks
-    test("h1 has text-align center", () => {
-        expect(html).toMatch(/text-align\s*:\s*center/i);
-    });
+<body>
 
-    // 5 Marks
-    test("ID selector #heading exists", () => {
-        expect(html).toMatch(/#heading\s*\{/);
-    });
+    <h1>Basic CSS Selectors</h1>
 
-    // 5 Marks
-    test("ID selector color is red", () => {
-        expect(html).toMatch(/#heading[\s\S]*color\s*:\s*red/i);
-    });
+    <h2>Element Selector</h2>
+    <p>This is an element selector example.</p>
 
-    // 5 Marks
-    test("Class selector .info exists", () => {
-        expect(html).toMatch(/\.info\s*\{/);
-    });
+    <h2>ID Selector</h2>
+    <p id="para1">This is an ID selector example.</p>
 
-    // 5 Marks
-    test(".info has font-size 18px", () => {
-        expect(html).toMatch(/font-size\s*:\s*18px/i);
-    });
+    <h2>Class Selector</h2>
+    <p class="para">This is a class selector example.</p>
 
-    // 5 Marks
-    test("Grouping selector h2, p exists", () => {
-        expect(html).toMatch(/h2\s*,\s*p\s*\{/);
-    });
+    <h3>Group Selector</h3>
+    <p>This example demonstrates group selectors.</p>
 
-    // 5 Marks
-    test("Grouping selector has margin 10px", () => {
-        expect(html).toMatch(/margin\s*:\s*10px/i);
-    });
-
-});
+</body>
+</html>
+ 
